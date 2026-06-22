@@ -73,8 +73,8 @@ a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 section{padding:84px 0}
 .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
-.en [data-bn]{display:none}
-.bn [data-en]{display:none}
+.en [data-bn]:not(option):not(optgroup){display:none}
+.bn [data-en]:not(option):not(optgroup){display:none}
 
 /* scroll progress */
 #progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:1000;transition:width .1s}
@@ -533,7 +533,32 @@ footer p.fdesc{font-size:14.5px;margin-top:16px;max-width:330px;color:#94a3b8}
         <div class="field" id="f-type">
           <label data-bn>সেবার ধরন</label><label data-en>Service Type</label>
           <select>
-            <option value="" data-bn>সেবা নির্বাচন করুন</option>
+            <option value="" data-bn="সেবা নির্বাচন করুন" data-en="Select a service">সেবা নির্বাচন করুন</option>
+            <optgroup data-bn="সরকারি সেবা" data-en="Government Services" label="সরকারি সেবা">
+              <option value="NID Application & Correction" data-bn="জাতীয় পরিচয়পত্র (NID) আবেদন ও সংশোধন" data-en="NID Application & Correction">জাতীয় পরিচয়পত্র (NID) আবেদন ও সংশোধন</option>
+              <option value="Birth Registration" data-bn="জন্ম নিবন্ধন আবেদন ও সংশোধন" data-en="Birth Registration">জন্ম নিবন্ধন আবেদন ও সংশোধন</option>
+              <option value="Passport Application" data-bn="পাসপোর্ট আবেদন" data-en="Passport Application">পাসপোর্ট আবেদন</option>
+              <option value="E-Passport Support" data-bn="ই-পাসপোর্ট সহায়তা" data-en="E-Passport Support">ই-পাসপোর্ট সহায়তা</option>
+              <option value="Police Clearance" data-bn="পুলিশ ক্লিয়ারেন্স আবেদন" data-en="Police Clearance">পুলিশ ক্লিয়ারেন্স আবেদন</option>
+              <option value="Trade License" data-bn="ট্রেড লাইসেন্স আবেদন" data-en="Trade License">ট্রেড লাইসেন্স আবেদন</option>
+              <option value="e-TIN Certificate" data-bn="টিন সার্টিফিকেট (e-TIN)" data-en="e-TIN Certificate">টিন সার্টিফিকেট (e-TIN)</option>
+              <option value="Online Visa Application" data-bn="অনলাইন ভিসা আবেদন" data-en="Online Visa Application">অনলাইন ভিসা আবেদন</option>
+              <option value="Job Applications" data-bn="চাকরির আবেদন" data-en="Job Applications">চাকরির আবেদন</option>
+              <option value="University Admission" data-bn="বিশ্ববিদ্যালয় ভর্তি আবেদন" data-en="University Admission">বিশ্ববিদ্যালয় ভর্তি আবেদন</option>
+              <option value="Land Services" data-bn="ভূমি সংক্রান্ত অনলাইন সেবা" data-en="Land Services">ভূমি সংক্রান্ত অনলাইন সেবা</option>
+            </optgroup>
+            <optgroup data-bn="ইউটিলিটি সেবা" data-en="Utility Services" label="ইউটিলিটি সেবা">
+              <option value="Utility Bill Payment" data-bn="বিদ্যুৎ, গ্যাস ও পানি বিল পরিশোধ" data-en="Utility Bill Payment">বিদ্যুৎ, গ্যাস ও পানি বিল পরিশোধ</option>
+              <option value="Mobile Banking" data-bn="মোবাইল ব্যাংকিং সেবা" data-en="Mobile Banking">মোবাইল ব্যাংকিং সেবা</option>
+            </optgroup>
+            <optgroup data-bn="কম্পিউটার সেবা" data-en="Computer Services" label="কম্পিউটার সেবা">
+              <option value="Computer Typing" data-bn="কম্পিউটার টাইপিং (বাংলা ও ইংরেজি)" data-en="Computer Typing">কম্পিউটার টাইপিং (বাংলা ও ইংরেজি)</option>
+              <option value="Scan, Print & Photocopy" data-bn="স্ক্যান, প্রিন্ট ও ফটোকপি" data-en="Scan, Print & Photocopy">স্ক্যান, প্রিন্ট ও ফটোকপি</option>
+              <option value="CV / Resume Building" data-bn="জীবনবৃত্তান্ত (CV) তৈরি" data-en="CV / Resume Building">জীবনবৃত্তান্ত (CV) তৈরি</option>
+              <option value="Email & Document Support" data-bn="ইমেইল ও ডকুমেন্ট সাপোর্ট" data-en="Email & Document Support">ইমেইল ও ডকুমেন্ট সাপোর্ট</option>
+              <option value="Online Form Filling" data-bn="সকল ধরনের অনলাইন ফরম পূরণ" data-en="Online Form Filling">সকল ধরনের অনলাইন ফরম পূরণ</option>
+            </optgroup>
+            <option value="Other" data-bn="অন্যান্য সেবা" data-en="Other Service">অন্যান্য সেবা</option>
           </select>
           <span class="err" data-bn>সেবা নির্বাচন করুন</span><span class="err" data-en>Select a service</span>
         </div>
@@ -621,7 +646,7 @@ footer p.fdesc{font-size:14.5px;margin-top:16px;max-width:330px;color:#94a3b8}
         </div>
       </div>
     </div>
-    <div class="foot-bottom">© 2026 Shahid Online Services Point. <span data-bn>সর্বস্বত্ব সংরক্ষিত।</span><span data-en>All rights reserved.</span></div>
+    <div class="foot-bottom">© 2026 Shahid Online Services Point. <span style="opacity:.4">[v3]</span><!-- BUILD v3 --> <span data-bn>সর্বস্বত্ব সংরক্ষিত।</span><span data-en>All rights reserved.</span></div>
   </div>
 </footer>
 
@@ -748,11 +773,8 @@ document.getElementById('faq-list').innerHTML=faqs.map(f=>
   <span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span></div>
   <div class="faq-a"><div data-bn>${f.a_bn}</div><div data-en>${f.a_en}</div></div></div>`).join('');
 
-/* service dropdown */
+/* service dropdown — options are static in HTML, just grab ref */
 const sel=document.querySelector('#f-type select');
-[...govServices,...utilServices,...compServices].forEach(s=>{
-  const o=document.createElement('option');o.value=s.en;o.textContent=s.bn;o.dataset.bn=s.bn;o.dataset.en=s.en;sel.appendChild(o);
-});
 
 /* ---------- i18n ---------- */
 function setLang(l){
@@ -761,8 +783,9 @@ function setLang(l){
   const onBn=l==='bn';
   ['bn-btn','bn-btn2'].forEach(id=>document.getElementById(id)?.classList.toggle('active',onBn));
   ['en-btn','en-btn2'].forEach(id=>document.getElementById(id)?.classList.toggle('active',!onBn));
-  // translate dropdown options
+  // translate dropdown options + group labels
   document.querySelectorAll('#f-type option[data-bn]').forEach(o=>o.textContent=onBn?o.dataset.bn:o.dataset.en);
+  document.querySelectorAll('#f-type optgroup[data-bn]').forEach(g=>g.label=onBn?g.dataset.bn:g.dataset.en);
 }
 
 /* ---------- interactions ---------- */
@@ -781,19 +804,42 @@ function submitForm(){
   const phoneRe=/^(01)[3-9]\d{8}$/;
   const name=document.querySelector('#f-name input');
   const phone=document.querySelector('#f-phone input');
+  const wa=document.querySelector('#f-wa input');
   const type=document.querySelector('#f-type select');
   const file=document.getElementById('f-file');
+  const msg=document.querySelector('#contact textarea');
   document.querySelectorAll('.field').forEach(f=>f.classList.remove('invalid'));
   if(!name.value.trim()){document.getElementById('f-name').classList.add('invalid');ok=false;}
   if(!phoneRe.test(phone.value.replace(/\s/g,''))){document.getElementById('f-phone').classList.add('invalid');ok=false;}
   if(!type.value){document.getElementById('f-type').classList.add('invalid');ok=false;}
   if(file.files[0] && file.files[0].size>5*1024*1024){file.closest('.field').classList.add('invalid');ok=false;}
   if(!ok)return;
-  // success — hook to backend / email API here
+
+  const onBn=document.body.className==='bn';
+  // chosen service label in current language
+  const opt=type.options[type.selectedIndex];
+  const svcLabel=onBn?(opt.dataset.bn||opt.textContent):(opt.dataset.en||opt.value);
+
+  // build the message that lands in the business WhatsApp
+  const lines=[
+    onBn?'নতুন সেবার অনুরোধ — শহীদ অনলাইন সার্ভিসেস পয়েন্ট':'New Service Request — Shahid Online Service Point',
+    '',
+    (onBn?'নাম: ':'Name: ')+name.value.trim(),
+    (onBn?'ফোন: ':'Phone: ')+phone.value.trim(),
+    (wa.value.trim()?(onBn?'হোয়াটসঅ্যাপ: ':'WhatsApp: ')+wa.value.trim():null),
+    (onBn?'সেবা: ':'Service: ')+svcLabel,
+    (msg.value.trim()?(onBn?'বার্তা: ':'Message: ')+msg.value.trim():null),
+    (file.files[0]?(onBn?'\n(গ্রাহক একটি ডকুমেন্ট সংযুক্ত করতে চান — চ্যাটে পাঠাবেন)':'\n(Customer has a document to attach — will send in chat)'):null)
+  ].filter(Boolean);
+
+  const waLink='https://wa.me/8801619234820?text='+encodeURIComponent(lines.join('\n'));
+
+  // show confirmation toast, then open WhatsApp
   const t=document.getElementById('toast');t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),3500);
-  name.value='';phone.value='';type.value='';file.value='';
-  document.querySelector('#f-wa input').value='';document.querySelector('#contact textarea').value='';
+  window.open(waLink,'_blank');
+
+  name.value='';phone.value='';wa.value='';type.value='';file.value='';msg.value='';
 }
 
 /* scroll effects */
